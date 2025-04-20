@@ -1,5 +1,8 @@
 {
     "version": 2,
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
+    "framework": "vite",
     "builds": [
         {
             "src": "package.json",
@@ -11,8 +14,11 @@
     ],
     "routes": [
         {
-            "src": "/(.*)",
-            "dest": "/dist/$1"
+            "handle": "filesystem"
+        },
+        {
+            "src": "/.*",
+            "dest": "/index.html"
         }
     ]
 }
